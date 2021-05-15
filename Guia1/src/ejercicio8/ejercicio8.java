@@ -12,5 +12,6 @@ public class ejercicio8 {
             System.out.println("El número ingresado es impar");
         }
     }
-    
 }
+
+/*Crear un programa que dado un numero determine si es par o impar.*/

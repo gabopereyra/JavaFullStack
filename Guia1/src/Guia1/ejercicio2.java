@@ -17,3 +17,6 @@ public static void main(String[] args) {
         System.out.println("El resultado de la suma es: "+resultado);
     }
 }
+
+/*Escribir un programa que pida tu nombre, lo guarde en una variable y lo muestre 
+por pantalla.*/

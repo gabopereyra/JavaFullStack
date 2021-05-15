@@ -18,3 +18,5 @@ public static void main(String[] args) {
     }
     
 }
+/*Implementar un programa que dado dos números enteros determine cuál es el 
+mayor y lo muestre por pantalla.*/
