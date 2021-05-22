@@ -42,20 +42,13 @@ public class Ejercicio28 {
             for (int j = 0; j < (dimUno - 3); j++) {
                 if (matUno[i][j] == matDos[0][0]) {
                     control = true;
-                    int auxUno = i; //auxiliares para no perder datos
-                    int auxDos = j;
                     for (int k = 0; k < 3; k++) {
                         for (int l = 0; l < 3; l++) {
-                            if (matUno[i][j] != matDos[k][l]) {
+                            if (matUno[i+k][j+l] != matDos[k][l]) {
                                 control = false;
                             }
-                            j++;
                         }
-                        j = auxDos;
-                        i++;
                     }
-                    i = auxUno; //devuelvo los valores a los for que recorren la matriz grande
-                    j = auxDos; //devuelvo los valores a los for que recorren la matriz grande
                     if (control) {
                         System.out.println("La submatriz de 3x3 se encuentra contenida a partir de la posición " + i + ", " + j);
                     }
@@ -75,5 +68,4 @@ public class Ejercicio28 {
             System.out.println("");
         }
     } //Fin subproceso para imprimir.
-
 }
