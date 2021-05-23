@@ -38,8 +38,8 @@ public class Ejercicio28 {
 
     private static void check(int[][] matUno, int[][] matDos, int dimUno) {
         boolean control = false;
-        for (int i = 0; i < (dimUno - 3); i++) {
-            for (int j = 0; j < (dimUno - 3); j++) {
+        for (int i = 0; i < (dimUno - 2); i++) {
+            for (int j = 0; j < (dimUno - 2); j++) {
                 if (matUno[i][j] == matDos[0][0]) {
                     control = true;
                     for (int k = 0; k < 3; k++) {
