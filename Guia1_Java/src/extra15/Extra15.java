@@ -16,7 +16,7 @@ public class Extra15 {
         boolean continuation;
         do {
             continuation = askForInformation(read);
-            System.out.println(continuation);
+
         } while (continuation);
     } //end main
 
