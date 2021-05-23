@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Extra21 {
 
     public static void main(String[] args) {
-        System.out.println("La sumatoria de los elementos de la matriz aleatoria es igual a= "+showSum());
+        System.out.println("La sumatoria de los elementos de la matriz aleatoria es igual a "+showSum());
     } //End main
 
     private static int showSum() {
