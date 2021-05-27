@@ -28,8 +28,8 @@ public class Extra22 {
     } //End doSoup
 
     private static void showSoup(String[][] matriz) {
-        for (int i = 0; i < matriz[0].length; i++) {
-            for (int j = 0; j < matriz.length; j++) {
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[0].length; j++) {
                 System.out.print(matriz[i][j]+" ");
             }
             System.out.println("");
