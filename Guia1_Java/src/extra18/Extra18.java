@@ -50,7 +50,7 @@ public class Extra18 {
 
     private static boolean areEquals(int[] vectorOne, int[] vectorTwo, int dimension) {
         boolean answer = true;
-        for (int i = 0; i < dimension && answer==true; i++) {
+        for (int i = 0; i < dimension && answer; i++) {
             if (vectorOne[i] !=vectorTwo[i] ) {
                 answer = false;
             }
