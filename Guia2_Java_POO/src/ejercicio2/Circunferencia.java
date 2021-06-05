@@ -16,7 +16,7 @@ public class Circunferencia {
 
     Scanner read = new Scanner(System.in);
 
-    public double radio;
+   private double radio;
 
     public Circunferencia(double radio) {
         this.radio = radio;
@@ -31,21 +31,20 @@ public class Circunferencia {
     } //(punto b)
 
     public void setRadio(double radio) {
-        System.out.println("Indique el valor del radio:");
-        this.radio = read.nextInt();
+        this.radio = radio;
     } //(punto b)
     
     public void crearCircunferencia(){
         System.out.println("Ingrese el valor del radio: ");
-        radio = read.nextInt();
+        this.radio = read.nextInt();
     } //(punto C)
 
-    public double area(double radio) {
-        double area = radio * Math.PI;
+    public double area() {
+        double area = Math.sqrt(radio) * Math.PI;
         return area;
     }//End area (punto D)
 
-    public double perimetro(double radio) {
+    public double perimetro() {
         double perimetro = radio * 2 * Math.PI;
         return perimetro;
     }//End perimetro (punto E)

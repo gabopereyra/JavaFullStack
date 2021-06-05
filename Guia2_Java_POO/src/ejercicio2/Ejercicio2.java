@@ -17,7 +17,8 @@ public class Ejercicio2 {
         Circunferencia circle = new Circunferencia();
         
         circle.crearCircunferencia();
-        
+        System.out.println(circle.area());
+        System.out.println(circle.perimetro());
         System.out.println(circle.getRadio());
     }
     
