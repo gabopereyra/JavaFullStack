@@ -44,12 +44,16 @@ public class Rectangulo {
     }
     //End getters & setter
 
-    public void create() {
+    public Rectangulo create() {
+        Rectangulo rec = new Rectangulo();
+        
         System.out.println("Ingrese el valor de la base");
-        this.base=read.nextDouble();
+        rec.setBase(read.nextInt());
         
         System.out.println("Ingrese el valor de la altura");
-        this.altura=read.nextDouble();
+        rec.setAltura(read.nextInt());
+        
+        return rec;
     } //Punto A
 
     public double area() {
