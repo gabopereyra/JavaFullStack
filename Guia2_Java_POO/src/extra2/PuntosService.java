@@ -30,7 +30,7 @@ en los atributos del objeto. */
      */
     public double calcularDistancia(Puntos coordenadas){
         double distancia;
-        distancia = Math.sqrt(Math.pow(coordenadas.getX2()-coordenadas.getX1(),2)+Math.pow(coordenadas.getX2()-coordenadas.getX1(),2));
+        distancia = Math.sqrt(Math.pow(coordenadas.getX2()-coordenadas.getX1(),2)+Math.pow(coordenadas.getY2()-coordenadas.getY1(),2));
         return distancia;
     }
     
