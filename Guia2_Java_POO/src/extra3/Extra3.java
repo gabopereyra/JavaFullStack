@@ -23,11 +23,11 @@ package extra3;
 
 public class Extra3 {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+       RaicesService nuevoServicio = new RaicesService();
+       Raices ecuacion = nuevoServicio.nuevaEcuacion();
+       
+       nuevoServicio.calcular(ecuacion);
     }
     
 }
