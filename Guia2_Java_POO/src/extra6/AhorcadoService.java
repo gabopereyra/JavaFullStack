@@ -79,16 +79,16 @@ public class AhorcadoService {
 
         String auxiliar[] = new String[27];
         int contador = 0;
-        
+
         String auxiliarVisual[] = new String[longitud(nuevoJuego)];
         for (int i = 0; i < auxiliarVisual.length; i++) {
             auxiliarVisual[i] = "_ ";
         }
-        
+                 
         mostrarAyuda(auxiliarVisual);
-        System.out.println("Recuerda que tienes "+intentos(nuevoJuego)+" intentos.");
+        System.out.println("Recuerda que tienes " + intentos(nuevoJuego) + " intentos.");
         while (nuevoJuego.getCantidadLetras() != longitud(nuevoJuego) && nuevoJuego.getCantJugadas() != 0) {
-           
+
             System.out.println("Ingrese una letra: ");
             String letra = read.next();
 
@@ -96,7 +96,7 @@ public class AhorcadoService {
                 System.out.println("Debe indicar solo una letra, intente nuevamente:");
                 letra = read.nextLine();
             }
-            
+
             if (Arrays.asList(auxiliar).contains(letra)) {
                 System.out.println("La letra indicada ya fue utilizada");
                 mostrarAyuda(auxiliarVisual);
@@ -145,7 +145,6 @@ public class AhorcadoService {
             }
         }
     } //fin mostrarParcial
-    //FIN METODOS AUXILIARES 
 
     private void mostrarAyuda(String[] auxiliarVisual) {
         for (String elemento : auxiliarVisual) {
@@ -153,5 +152,6 @@ public class AhorcadoService {
         }
         System.out.println("");
     }
+    //FIN METODOS AUXILIARES 
 
 } //fin clase servicio
