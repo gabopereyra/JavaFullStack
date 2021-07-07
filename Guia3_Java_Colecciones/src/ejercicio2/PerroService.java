@@ -34,11 +34,7 @@ public class PerroService {
             System.out.println("El valor indicado es incorrecto, intente nuevamente:");
             ans = read.next().toUpperCase();
         }
-        if (ans.equals("S")) {
-            return true;
-        } else {
-            return false;
-        }
+        return ans.equals("S");
     } //Fin metodo pregunta
 
     private void addRaza(Perro perro) {
