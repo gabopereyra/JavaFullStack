@@ -52,11 +52,9 @@ public class LibroService {
                     libro1.setPrestados(1 + libro1.getPrestados());
                     return true;
                 }
-            } else {
-                System.out.print("El libro indicado no existe. ");
-                return false;
             }
         }
+        System.out.print("El libro indicado no existe. ");   
         return false;
     }
     //Prestamo
