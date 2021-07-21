@@ -8,3 +8,12 @@ Guia2_Java_POO/nbproject/build-impl.xml
 Guia2_Java_POO/manifest.mf
 Guia2_Java_POO/build.xml
 /Guia2_Java_POO/build/
+*.xml
+Guia3_Java_Colecciones/build/classes/.netbeans_automatic_build
+*.class
+Guia3_Java_Colecciones/build/classes/.netbeans_update_resources
+*.mf
+*.properties
+Guia4_Relaciones/build/classes/.netbeans_automatic_build
+Guia4_Relaciones/build/classes/.netbeans_update_resources
+Guia4_Relaciones/UMLDiagrams/umlproject
