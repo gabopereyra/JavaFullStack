@@ -15,13 +15,13 @@ public class Televisor extends Electrodomestico {
     private boolean TDT;
 
     //resolución (en pulgadas) y sintonizador TDT (booleano)
-    Televisor(Double precio, String color, char consumoEnergetico, Double peso, Double resolucion, boolean TDT) {
+    public Televisor(Double precio, String color, char consumoEnergetico, Double peso, Double resolucion, boolean TDT) {
         super(precio, color, consumoEnergetico, peso);
         this.resolucion = resolucion;
         this.TDT = TDT;
     }
 
-    Televisor() {
+    public Televisor() {
     }
 
     public Double getResolucion() {
