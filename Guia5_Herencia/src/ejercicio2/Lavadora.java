@@ -39,7 +39,6 @@ public class Lavadora extends Electrodomestico {
         this.carga = carga;
         
         crearElectrodomestico();
-        precioFinal();
     }
 
     /*Método precioFinal(): este método será heredado y se le sumará la siguiente

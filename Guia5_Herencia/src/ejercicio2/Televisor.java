@@ -49,7 +49,6 @@ public class Televisor extends Electrodomestico {
         read.nextLine();
 
         crearElectrodomestico();
-        precioFinal();
     }
 
     /*Método precioFinal(): este método será heredado y se le sumará la siguiente
