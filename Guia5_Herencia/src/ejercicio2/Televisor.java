@@ -57,6 +57,7 @@ funcionalidad. Si el televisor tiene una resolución mayor de 40 pulgadas, se
 incrementará el precio un 30% y si tiene un sintonizador TDT incorporado,
 aumentará $500. Recuerda que las condiciones que hemos visto en la clase
 Electrodomestico también deben afectar al precio*/
+    @Override
     public double precioFinal() {
         double value = super.precioFinal();
         if (this.resolucion > 40.0) {
