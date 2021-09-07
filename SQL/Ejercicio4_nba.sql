@@ -18641,4 +18641,4 @@ SELECT * FROM Puntos_equipo_partidos;
 SELECT codigo, equipo_local, equipo_visitante,
 CASE WHEN p.puntos_local>p.puntos_visitante THEN equipo_local
 WHEN p.puntos_local<p.puntos_visitante THEN equipo_visitante 
-ELSE NULL END AS equipo_ganador FROM partidos p
+ELSE NULL END AS equipo_ganador FROM partidos p;
