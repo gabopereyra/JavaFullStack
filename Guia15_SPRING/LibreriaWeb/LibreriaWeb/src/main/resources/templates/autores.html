@@ -73,14 +73,14 @@
         </nav>
 
 
-        <div class="container">
+        <div class="container container-autor">
             <h2>Listado de autores</h2>
             <hr>
             <div th:if="${autores.isEmpty()}">
                 <h5>Todavía no hay autores cargados. <a th:href="@{/autores/crear}">Cargar autor.</a></h5>
             </div>
             <div th:unless="${autores.isEmpty()}">
-                <table class="table">
+                <table class="table text-center">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -91,10 +91,11 @@
                     <tbody>
                         <tr th:each="autor : ${autores}">
                             <th class="col-md-1 px-md-2 text-center" scope="row"
-                                th:text="${usuario.id}"></th>
-                            <td class="col-md-3 px-md-2" th:text="${usuario.nombre}"></td>
-                                <a class="btn btn-secondary btn-sm" th:href="@{/usuarios/editar/__${usuario.dni}__}">Editar</a>
-                                <form method="post" th:action="@{/usuarios/eliminar/__${usuario.dni}__}">
+                                th:text="${autor.id}"></th>
+                            <td class="col-md-3 px-md-2" th:text="${autor.nombre}"></td>
+                            <td class="d-flex justify-content-evenly">
+                                <a class="btn btn-info btn-sm" th:href="@{/autores/editar/__${autor.id}__}">Editar</a>
+                                <form method="post" th:action="@{/autores/eliminar/__${autor.id}__}">
                                     <button class="btn btn-danger btn-sm" type="submit">Eliminar</button>
                                 </form>
                             </td>
@@ -106,7 +107,7 @@
 
         <footer class="footer py-3 bg-dark fixed-bottom">
             <div class="container d-flex justify-content-center">
-                <a href="https://github.com/gabopereyra"><span class="text-muted">&copy; Gabo Pereyra - 2021</span</a>
+                <a href="https://github.com/gabopereyra"><span class="text-muted">&copy; Gabo 🐰 - 2021 </span</a>
             </div>
         </footer>
 

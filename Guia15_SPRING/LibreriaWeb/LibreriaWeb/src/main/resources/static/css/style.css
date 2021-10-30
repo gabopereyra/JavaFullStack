@@ -88,6 +88,12 @@ table {
   background-color: rgba(256, 256, 256, 0.4);
 }
 
-h5 a{
+h5 a {
   color: #d42525d1;
+}
+
+@media (min-width: 576px) {
+  .container-autor {
+    max-width: 720px;
+  }
 }
