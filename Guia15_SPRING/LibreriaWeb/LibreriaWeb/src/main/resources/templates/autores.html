@@ -74,9 +74,35 @@
 
 
         <div class="container">
-
+            <h2>Listado de autores</h2>
+            <hr>
+            <div th:if="${autores.isEmpty()}">
+                <h5>Todavía no hay autores cargados. <a th:href="@{/autores/crear}">Cargar autor.</a></h5>
+            </div>
+            <div th:unless="${autores.isEmpty()}">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="autor : ${autores}">
+                            <th class="col-md-1 px-md-2 text-center" scope="row"
+                                th:text="${usuario.id}"></th>
+                            <td class="col-md-3 px-md-2" th:text="${usuario.nombre}"></td>
+                                <a class="btn btn-secondary btn-sm" th:href="@{/usuarios/editar/__${usuario.dni}__}">Editar</a>
+                                <form method="post" th:action="@{/usuarios/eliminar/__${usuario.dni}__}">
+                                    <button class="btn btn-danger btn-sm" type="submit">Eliminar</button>
+                                </form>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-
 
         <footer class="footer py-3 bg-dark fixed-bottom">
             <div class="container d-flex justify-content-center">
