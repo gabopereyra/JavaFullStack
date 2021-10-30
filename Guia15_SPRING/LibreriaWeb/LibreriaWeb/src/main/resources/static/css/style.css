@@ -1,5 +1,52 @@
-img {
-    max-width: 20%;
-    height: auto;
-  }
-  
+:root {
+  --color1: #10334c;
+  --color2: #0d5774;
+  --color3: #098aa5;
+  --color4: #06d0db;
+  --color5: #0ffff7;
+  --fondo: linear-gradient(230deg, #7da16d 0, #74a272 3.33%, #6ba379 6.67%, #62a480 10%, #59a587 13.33%, #4fa68f 16.67%, #46a696 20%, #3da69e 23.33%, #35a6a6 26.67%, #2fa6ad 30%, #2ba5b4 33.33%, #2ca5ba 36.67%, #32a4c0 40%, #3aa2c5 43.33%, #44a1c9 46.67%, #509fcc 50%, #5c9dce 53.33%, #689bcf 56.67%, #7498cf 60%, #8096cf 63.33%, #8c93cd 66.67%, #9690ca 70%, #a08ec6 73.33%, #aa8bc1 76.67%, #b289bc 80%, #b986b5 83.33%, #c084af 86.67%, #c583a8 90%, #c982a0 93.33%, #cc8199 96.67%, #ce8191 100%);
+  --fondoInv: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
+}
+
+body {
+  display: flex;
+  background-image: var(--fondo);
+  height: 100vh;
+}
+.navbar{
+  background-color: var(--color1);
+}
+
+.logo {
+  max-width: 20%;
+  height: auto;
+}
+
+.card{
+  transition: all 0.5s ease-in-out;
+}
+
+.card:hover {
+  scale: 1.05;
+}
+
+.card-body {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+h5 {
+  padding-bottom: 0.5rem;
+}
+
+.card {
+  border-radius: 1rem;
+  background-image: var(--fondoInv);
+}
+.card img {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+footer a{
+  text-decoration: none;
+}

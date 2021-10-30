@@ -9,18 +9,22 @@
         <title>Libreria Gabo</title>
         <!-- CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"/>
-        <!--     <link rel="stylesheet" th:href="@{/css/style.css}"/> -->
+        
         <link rel="stylesheet" href="../static/css/style.css">
+
+        <link rel="stylesheet" th:href="@{/css/style.css}">
+        
+        
     </head>
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <body class="align-items-center">
+        <nav class="navbar navbar-expand-lg fixed-top ">
             <div class="container-fluid ">
               
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mb-2 mb-md-0 w-100">
+                <ul class="navbar-nav mb-2 w-100">
                     <!--DROPDOWN autores-->
                     <li class="nav-item dropdown">
                         <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"
@@ -43,9 +47,9 @@
                             Editorial
                         </a>
                         <ul aria-labelledby="dropdown-editorial" class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item" th:href="@{/editorial}">Mostrar editoriales</a></li>
+                            <li><a class="dropdown-item" th:href="@{/editoriales}">Mostrar editoriales</a></li>
                             <li>
-                                <a class="dropdown-item" th:href="@{/editorial/crear}">Crear editorial</a>
+                                <a class="dropdown-item" th:href="@{/editoriales/crear}">Crear editorial</a>
                             </li>
                         </ul>
                     </li>
@@ -56,47 +60,53 @@
                             Libros
                         </a>
                         <ul aria-labelledby="dropdown-libro" class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item" th:href="@{/libro}">Mostrar libros</a></li>
+                            <li><a class="dropdown-item" th:href="@{/libros}">Mostrar libros</a></li>
                             <li>
-                                <a class="dropdown-item" th:href="@{/libro/crear}">Crear libro</a>
+                                <a class="dropdown-item" th:href="@{/libros/crear}">Crear libro</a>
                             </li>
                         </ul>
                     </li>
                 </ul>
-                <a class="navbar-brand" href="@{/}"><img src="../static/img/Logo.webp" alt="Logo"></a>
+                <a class="navbar-brand text-end" href="@{/}"><img src="../img/Logo.webp" alt="Logo" class="logo"></a>
             </div>
           </nav>
-
         </nav>
 
+          <!-- lUEGO BORRAR STATIC PARA QUE SPRING LEVANTE LAS IMAGENES-->
 
-        <div class="container mt-5 main">
+        <div class="container">
 
         <div class="row row-cols-1 row-cols-md-3 g-4">
             <div class="col">
               <div class="card">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
+                <a th:href="@{/autores}"><img src="../img/autor.webp" class="card-img-top" alt="autores"></a>
+                <div class="card-body text-center">
                   <h5 class="card-title">AUTORES</h5>
-                  <p class="card-text"><button type="button" class="btn btn-primary">VER TODOS</button> <button type="button" class="btn btn-success">CREAR</button></p>
+                  <p class="card-text">
+                    <a th:href="@{/autores}"><button type="button" class="btn btn-primary" >VER TODOS</button></a> 
+                    <a th:href="@{/autores}"><button type="button" class="btn btn-success" >CREAR</button></a></p>
                 </div>
               </div>
             </div>
             <div class="col">
-              <div class="card">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <div class="card ">
+                <a th:href="@{/editoriales}"><img src="../img/editorial.webp" class="card-img-top" alt="editorial"></a>
+                <div class="card-body text-center">
+                  <h5 class="card-title">EDITORIALES</h5>
+                  <p class="card-text">
+                    <a th:href="@{/editoriales}"><button type="button" class="btn btn-primary">VER TODOS</button></a>
+                    <a th:href="@{/editoriales}"><button type="button" class="btn btn-success">CREAR</button></p></a>
                 </div>
               </div>
-            </div>
+            </div>            
             <div class="col">
-              <div class="card">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+              <div class="card ">
+                <a th:href="@{/libros}"><img src="../img/libros.webp" class="card-img-top" alt="libros"></a>
+                <div class="card-body text-center">
+                  <h5 class="card-title">LIBROS</h5>
+                  <p class="card-text">
+                    <a th:href="@{/libros}"><button type="button" class="btn btn-primary">VER TODOS</button></a>
+                    <a th:href="@{/libros}"><button type="button" class="btn btn-success">CREAR</button></a></p>
                 </div>
               </div>
             </div>
@@ -104,29 +114,9 @@
         </div>
 
 
-
-
-
-        <div class="container mt-5 main">
-            <div class="row my-auto g-4 justify-content-evenly">
-                <div class="card col-lg-5 p-0 clickable-card">
-                    <a class="text-decoration-none" th:href="@{/usuarios}">
-                        <div class="row g-0">
-                            <div class="col-md-4 index-usuario"></div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">USUARIOS</h5>
-                                    <p class="card-text">Acceda a la página de usuarios</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-        </div>
-
         <footer class="footer py-3 bg-dark fixed-bottom">
             <div class="container d-flex justify-content-center">
-                <span class="text-muted">&copy; Gabo Pereyra - 2021</span>
+                <a href="https://github.com/gabopereyra"><span class="text-muted">&copy; Gabo Pereyra - 2021</span</a>
             </div>
         </footer>
 
