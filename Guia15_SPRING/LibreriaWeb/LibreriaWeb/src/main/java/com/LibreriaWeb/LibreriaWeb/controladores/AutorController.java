@@ -29,7 +29,7 @@ public class AutorController {
     @GetMapping("/crear")
     public ModelAndView createAutor() {
         ModelAndView mav = new ModelAndView("autor-form");
-        mav.addObject("nombre", new Autor());
+        mav.addObject("autor", new Autor());
         mav.addObject("title", "Crear autor");
         mav.addObject("action", "guardar");
         return mav;
