@@ -36,8 +36,8 @@ public class LibroServicio {
     
     
     @Transactional
-    public void modificar(Integer id, String titulo) {
-        libroRepositorio.modificar(id, titulo);
+    public void modificar(Integer id, String titulo, Integer anio, Autor autor, Editorial editorial, Integer ejemplares) {
+        libroRepositorio.modificar(id, titulo, anio, autor, editorial, ejemplares);
     }
 
     @Transactional(readOnly = true)

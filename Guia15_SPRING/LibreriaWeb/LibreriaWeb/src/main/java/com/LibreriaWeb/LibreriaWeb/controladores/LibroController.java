@@ -34,6 +34,7 @@ public class LibroController {
     @GetMapping("/crear")
     public ModelAndView crearLibro() {
         ModelAndView mav = new ModelAndView("libro-form");
+        mav.addObject("title", "Crear libro");
         mav.addObject("libro", new Libro());
         mav.addObject("ISBN", "ISBN");
         mav.addObject("titulo", "titulo");
@@ -49,6 +50,7 @@ public class LibroController {
     public ModelAndView editarLibro(@PathVariable Integer id) {
         ModelAndView mav = new ModelAndView("libro-form");
         mav.addObject("libro", libroServicio.buscarPorId(id));
+        mav.addObject("title", "Editar libro");
         mav.addObject("ISBN", "ISBN");
         mav.addObject("titulo", "titulo");
         mav.addObject("anio", "anio");
@@ -60,15 +62,15 @@ public class LibroController {
     }
 
     @PostMapping("/guardar")
-    public RedirectView guardar(@RequestParam Long ISBN, @RequestParam String titulo,@RequestParam Integer anio,
-            @RequestParam Integer ejemplares, @RequestParam("autor") Integer autorID,@RequestParam("editorial") Integer editorialID) {
+    public RedirectView guardar(@RequestParam Long ISBN, @RequestParam String titulo, @RequestParam Integer anio,
+            @RequestParam Integer ejemplares, @RequestParam("autor") Integer autorID, @RequestParam("editorial") Integer editorialID) {
         libroServicio.crear(ISBN, titulo, anio, ejemplares, autorID, editorialID);
         return new RedirectView("/libros");
     }
 
     @PostMapping("/modificar")
-    public RedirectView modificar(@RequestParam Integer id, @RequestParam String nombre) {
-        libroServicio.modificar(id, nombre);
+    public RedirectView modificar(@RequestParam Integer id, @RequestParam String titulo, @RequestParam Integer anio, @RequestParam Autor autor, @RequestParam Editorial editorial, @RequestParam Integer ejemplares) {
+        libroServicio.modificar(id, titulo, anio, autor, editorial, ejemplares);
         return new RedirectView("/libros");
     }
 
