@@ -29,7 +29,7 @@ public class EditorialController {
     @GetMapping("/crear")
     public ModelAndView createEditorial() {
         ModelAndView mav = new ModelAndView("editorial-form");
-        mav.addObject("nombre", new Editorial());
+        mav.addObject("editorial", new Editorial());
         mav.addObject("title", "Crear editorial");
         mav.addObject("action", "guardar");
         return mav;
@@ -53,7 +53,7 @@ public class EditorialController {
     @PostMapping("/modificar")
     public RedirectView modificar(@RequestParam Integer id, @RequestParam String nombre) {
         editorialServicio.modificar(id, nombre);
-        return new RedirectView("/editorial");
+        return new RedirectView("/editoriales");
     }
 
     @PostMapping("/eliminar/{id}")
