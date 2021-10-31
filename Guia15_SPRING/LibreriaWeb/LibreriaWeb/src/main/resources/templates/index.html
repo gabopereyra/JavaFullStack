@@ -17,60 +17,7 @@
         
     </head>
     <body class="align-items-center">
-        <nav class="navbar navbar-expand-lg fixed-top ">
-            <div class="container-fluid ">
-              
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mb-2 w-100">
-                    <!--DROPDOWN autores-->
-                    <li class="nav-item dropdown">
-                        <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"
-                           id="dropdown-autores" role="button">
-                            Autores
-                        </a>
-                        <ul aria-labelledby="dropdown-autores" class="dropdown-menu dropdown-menu-dark">
-                            <li>
-                                <a class="dropdown-item" th:href="@{/autores}">Mostrar autores</a>
-                            </li>
-                            <li>
-                                <a class="dropdown-item" th:href="@{/autores/crear}">Crear autor</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!--DROPDOWN EDITORIAL-->
-                    <li class="nav-item dropdown">
-                        <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"
-                           id="dropdown-editorial" role="button">
-                            Editorial
-                        </a>
-                        <ul aria-labelledby="dropdown-editorial" class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item" th:href="@{/editoriales}">Mostrar editoriales</a></li>
-                            <li>
-                                <a class="dropdown-item" th:href="@{/editoriales/crear}">Crear editorial</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!--DROPDOWN LIBROS-->
-                    <li class="nav-item dropdown">
-                        <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"
-                            id="dropdown-libro" role="button">
-                            Libros
-                        </a>
-                        <ul aria-labelledby="dropdown-libro" class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item" th:href="@{/libros}">Mostrar libros</a></li>
-                            <li>
-                                <a class="dropdown-item" th:href="@{/libros/crear}">Crear libro</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-                <a class="navbar-brand text-end" href="@{/}"><img src="../img/Logo.webp" alt="Logo" class="logo"></a>
-            </div>
-          </nav>
-        </nav>
+      <nav th:replace="fragmentos :: navbar"></nav>
 
           <!-- lUEGO BORRAR STATIC PARA QUE SPRING LEVANTE LAS IMAGENES-->
 
@@ -114,11 +61,7 @@
         </div>
 
 
-        <footer class="footer py-3 bg-dark fixed-bottom">
-            <div class="container d-flex justify-content-center">
-                <a href="https://github.com/gabopereyra"><span class="text-muted">&copy; Gabo Pereyra - 2021</span</a>
-            </div>
-        </footer>
+        <footer th:replace="fragmentos :: footer"></footer>
 
         <!-- JavaScript -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
