@@ -74,10 +74,48 @@
 
 
         <div class="container">
-
+            <h2>Listado de libros</h2>
+            <hr>
+            <div th:if="${libros.isEmpty()}">
+                <h5>Todavía no hay libros cargados. <a th:href="@{/libros/crear}">Cargar libro.</a></h5>
+            </div>
+            <div th:unless="${libros.isEmpty()}">
+                <table class="table text-center">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">ISBN</th>
+                            <th scope="col">Titulo</th>
+                            <th scope="col">Año</th>
+                            <th scope="col">Autor</th>
+                            <th scope="col">Editorial</th>
+                            <th scope="col">Ejemplares totales</th>
+                            <th scope="col">Ejemplares disponibles</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="libro : ${libros}">
+                            <th class="col-md-1 px-md-2 text-center" scope="row"
+                                th:text="${libro.id}"></th>
+                            <td class="col-md-3 px-md-2" th:text="${libro.ISBN}"></td>
+                            <td class="col-md-3 px-md-2" th:text="${libro.titulo}"></td>
+                            <td class="col-md-3 px-md-2" th:text="${libro.anio}"></td>
+                            <td class="col-md-3 px-md-2" th:text="${libro.autor.nombre}"></td>
+                            <td class="col-md-3 px-md-2" th:text="${libro.editorial.nombre}"></td>
+                            <td class="col-md-3 px-md-2" th:text="${libro.ejemplares}"></td>
+                            <td class="col-md-3 px-md-2" th:text="${libro.ejemplaresRestantes}"></td>
+                            <td class="d-flex justify-content-evenly">
+                                <a class="btn btn-info btn-sm" th:href="@{/libros/editar/__${libro.id}__}">Editar</a>
+                                <form method="post" th:action="@{/libros/eliminar/__${libro.id}__}">
+                                    <button class="btn btn-danger btn-sm" type="submit">Eliminar</button>
+                                </form>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-
-
         <footer class="footer py-3 bg-dark fixed-bottom">
             <div class="container d-flex justify-content-center">
                 <a href="https://github.com/gabopereyra"><span class="text-muted">&copy; Gabo Pereyra - 2021</span</a>

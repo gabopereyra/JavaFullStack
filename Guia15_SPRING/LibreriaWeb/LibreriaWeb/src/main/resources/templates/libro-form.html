@@ -73,11 +73,43 @@
         </nav>
 
 
-        <div class="container">
+        <div class="container container-small">
+            <h2 th:text="${title}"></h2>
+            <hr>
+            <form autocomplete="off" class="needs-validation" id="formulario" method="POST"
+            novalidate th:action="@{/libros/__${action}__}" th:object="${libro}">
+                <div class="mb-3">
+                <input type="hidden" name="id" th:field="*{id}">
+                <label for="ISBN" class="form-label">ISBN:</label>
+                <input type="number" class="form-control" id="ISBN" required th:field="*{ISBN}" placeholder="Ingrese el ISBN del libro">
+                <div class="invalid-feedback">El ISBN es obligatorio</div>
+                <label for="titulo" class="form-label">Titulo:</label>
+                <input type="text" class="form-control" id="titulo" required th:field="*{titulo}" placeholder="Ingrese el titulo del libro">
+                <div class="invalid-feedback">El titulo es obligatorio</div>
+                <label for="anio" class="form-label">Año:</label>
+                <input type="number" class="form-control" id="anio" required th:field="*{anio}" placeholder="Ingrese el año del libro">
+                <div class="invalid-feedback">El año es obligatorio</div>
+                <label for="ejemplares" class="form-label">Ejemplares:</label>
+                <input type="number" class="form-control" id="ejemplares" required th:field="*{ejemplares}" placeholder="Ingrese la cantidad de ejemplares del libro">
+                <div class="invalid-feedback">La cantidad de ejemplares es obligatoria</div>
 
+                <label for="autor" class="form-label">Autor:</label>
+                <select aria-label="Elegir autor" class="form-select" id="autor" th:field="*{autor}">
+                    <option selected value=""></option>
+                    <option th:each="autor : ${autor}" th:text="${autor.nombre}"
+                            th:value="${autor.id}"></option>
+                </select>
+
+                <label for="editorial" class="form-label">Editorial:</label>
+                <select aria-label="Elegir editorial" class="form-select" id="editorial" th:field="*{editorial}">
+                    <option selected value=""></option>
+                    <option th:each="editorial : ${editorial}" th:text="${editorial.nombre}"
+                            th:value="${editorial.id}"></option>
+                </select>
+                </div>
+                <button class="btn btn-success" th:text="${action == 'guardar'} ? 'Crear libro' : 'Guardar cambios'" type="submit">Enviar</button>
+              </form>
         </div>
-
-
         <footer class="footer py-3 bg-dark fixed-bottom">
             <div class="container d-flex justify-content-center">
                 <a href="https://github.com/gabopereyra"><span class="text-muted">&copy; Gabo Pereyra - 2021</span</a>
