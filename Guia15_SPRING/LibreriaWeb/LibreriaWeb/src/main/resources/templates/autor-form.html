@@ -73,8 +73,19 @@
         </nav>
 
 
-        <div class="container">
-
+        <div class="container container-small">
+            <h2 th:text="${title}">Crear Autor</h2>
+            <hr>
+            <form autocomplete="off" class="needs-validation" id="formulario" method="POST"
+            novalidate th:action="@{/autores/__${action}__}" th:object="${autor}">
+                <div class="mb-3">
+                <input type="hidden" name="id" th:field="*{id}">
+                  <label for="nombre" class="form-label">Nombre:</label>
+                  <input type="text" class="form-control" id="nombre" required th:field="*{nombre}" placeholder="Ingrese el nombre del autor">
+                  <div class="invalid-feedback">El nombre es obligatorio</div>
+                </div>
+                <button class="btn btn-success" th:text="${action == 'guardar'} ? 'Crear autor' : 'Guardar cambios'" type="submit">Enviar</button>
+              </form>
         </div>
 
 
