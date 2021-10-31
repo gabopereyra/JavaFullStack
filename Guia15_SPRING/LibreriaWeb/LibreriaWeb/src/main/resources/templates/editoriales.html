@@ -72,10 +72,38 @@
           </nav>
         </nav>
 
-
-        <div class="container">
-
+        <div class="container container-small">
+            <h2>Listado de editoriales</h2>
+            <hr>
+            <div th:if="${editoriales.isEmpty()}">
+                <h5>Todavía no hay editoriales cargados. <a th:href="@{/editoriales/crear}">Cargar editorial.</a></h5>
+            </div>
+            <div th:unless="${editoriales.isEmpty()}">
+                <table class="table text-center">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="editorial : ${editoriales}">
+                            <th class="col-md-1 px-md-2 text-center" scope="row"
+                                th:text="${editorial.id}"></th>
+                            <td class="col-md-3 px-md-2" th:text="${editorial.nombre}"></td>
+                            <td class="d-flex justify-content-evenly">
+                                <a class="btn btn-info btn-sm" th:href="@{/editoriales/editar/__${editorial.id}__}">Editar</a>
+                                <form method="post" th:action="@{/editoriales/eliminar/__${editorial.id}__}">
+                                    <button class="btn btn-danger btn-sm" type="submit">Eliminar</button>
+                                </form>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
+
 
 
         <footer class="footer py-3 bg-dark fixed-bottom">

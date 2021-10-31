@@ -73,8 +73,19 @@
         </nav>
 
 
-        <div class="container">
-
+        <div class="container container-small">
+            <h2 th:text="${title}"></h2>
+            <hr>
+            <form autocomplete="off" class="needs-validation" id="formulario" method="POST"
+            novalidate th:action="@{/editoriales/__${action}__}" th:object="${editorial}">
+                <div class="mb-3">
+                <input type="hidden" name="id" th:field="*{id}">
+                  <label for="nombre" class="form-label">Nombre:</label>
+                  <input type="text" class="form-control" id="nombre" required th:field="*{nombre}" placeholder="Ingrese el nombre del editorial">
+                  <div class="invalid-feedback">El nombre es obligatorio</div>
+                </div>
+                <button class="btn btn-success" th:text="${action == 'guardar'} ? 'Crear editorial' : 'Guardar cambios'" type="submit">Enviar</button>
+              </form>
         </div>
 
 
