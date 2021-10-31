@@ -59,6 +59,6 @@ public class EditorialController {
     @PostMapping("/eliminar/{id}")
     public RedirectView eliminar(@PathVariable Integer id) {
         editorialServicio.eliminar(id);
-        return new RedirectView("/editorial");
+        return new RedirectView("/editoriales");
     }
 }
