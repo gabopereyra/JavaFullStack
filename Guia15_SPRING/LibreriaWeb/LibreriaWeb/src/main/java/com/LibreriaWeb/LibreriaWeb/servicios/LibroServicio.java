@@ -55,4 +55,8 @@ public class LibroServicio {
     public void eliminar(Integer id) {
         libroRepositorio.deleteById(id);
     }
+    @Transactional
+    public void habilitar(Integer id, boolean flag) {
+        libroRepositorio.habilitar(id, true);
+    }
 }

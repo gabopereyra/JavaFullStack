@@ -52,10 +52,15 @@
                             <td class="col-md-3 px-md-2" th:text="${libro.editorial.nombre}"></td>
                             <td class="col-md-3 px-md-2" th:text="${libro.ejemplares}"></td>
                             <td class="col-md-3 px-md-2" th:text="${libro.ejemplaresRestantes}"></td>
-                            <td class="d-flex justify-content-evenly">
+                            <td th:if="${libro.alta == true}" class="d-flex justify-content-evenly">
                                 <a class="btn btn-info btn-sm" th:href="@{/libros/editar/__${libro.id}__}">Editar</a>
                                 <form method="post" th:action="@{/libros/eliminar/__${libro.id}__}">
-                                    <button class="btn btn-danger btn-sm" type="submit">Eliminar</button>
+                                    <button class="btn btn-danger btn-sm" type="submit">Deshabilitar</button>
+                                </form>
+                            </td>
+                            <td th:unless="${libro.alta == true}" class="d-flex justify-content-evenly">
+                                <form method="post" th:action="@{/libros/habilitar/__${libro.id}__}">
+                                    <button class="btn btn-warning btn-sm" type="submit">Habilitar</button>
                                 </form>
                             </td>
                         </tr>

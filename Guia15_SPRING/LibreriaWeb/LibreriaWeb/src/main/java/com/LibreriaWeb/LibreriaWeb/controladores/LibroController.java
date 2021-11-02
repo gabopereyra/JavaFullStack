@@ -79,4 +79,10 @@ public class LibroController {
         libroServicio.eliminar(id);
         return new RedirectView("/libros");
     }
+
+    @PostMapping("/habilitar/{id}")
+    public RedirectView habilitar(@PathVariable Integer id, boolean flag) {
+        libroServicio.habilitar(id, flag);
+        return new RedirectView("/libros");
+    }
 }
