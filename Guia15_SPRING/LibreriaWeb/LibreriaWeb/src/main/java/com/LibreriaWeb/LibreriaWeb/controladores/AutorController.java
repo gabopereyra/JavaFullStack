@@ -61,4 +61,10 @@ public class AutorController {
         autorServicio.eliminar(id);
         return new RedirectView("/autores");
     }
+    @PostMapping("/habilitar/{id}")
+    public RedirectView habilitar(@PathVariable Integer id, boolean flag) {
+        autorServicio.habilitar(id, flag);
+        return new RedirectView("/autores");
+    }
+    
 }

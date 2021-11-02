@@ -44,4 +44,8 @@ public class AutorServicio {
     public void eliminar(Integer id) {
         autorRepositorio.deleteById(id);
     }
+    @Transactional
+    public void habilitar(Integer id, boolean flag) {
+        autorRepositorio.habilitar(id, true);
+    }
 }
