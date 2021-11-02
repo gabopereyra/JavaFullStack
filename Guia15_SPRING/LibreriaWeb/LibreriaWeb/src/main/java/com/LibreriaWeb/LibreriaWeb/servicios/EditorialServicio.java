@@ -44,6 +44,10 @@ public class EditorialServicio {
     public void eliminar(Integer id) {
         editorialRepositorio.deleteById(id);
     }
+    @Transactional
+    public void habilitar(Integer id, boolean flag) {
+        editorialRepositorio.habilitar(id, true);
+    }
 }
   
 

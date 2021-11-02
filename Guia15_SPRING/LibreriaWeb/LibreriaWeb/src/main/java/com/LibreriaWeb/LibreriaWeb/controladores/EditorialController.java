@@ -61,4 +61,11 @@ public class EditorialController {
         editorialServicio.eliminar(id);
         return new RedirectView("/editoriales");
     }
+
+    @PostMapping("/habilitar/{id}")
+    public RedirectView habilitar(@PathVariable Integer id, boolean flag) {
+        editorialServicio.habilitar(id, flag);
+        return new RedirectView("/editoriales");
+    }
+
 }
