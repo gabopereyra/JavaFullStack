@@ -19,14 +19,17 @@
     <body class="align-items-center">
         <nav th:replace="fragmentos :: navbar"></nav>
 
-
-        <div class="container">
+        <div th:if="${libros.isEmpty()}" class="container container-small">
             <h2>Listado de libros</h2>
             <hr>
-            <div th:if="${libros.isEmpty()}">
+            <div>
                 <h5>Todavía no hay libros cargados. <a th:href="@{/libros/crear}">Cargar libro.</a></h5>
             </div>
-            <div th:unless="${libros.isEmpty()}">
+        </div>
+
+
+        <div th:unless="${libros.isEmpty()}" class="container">
+            <div>
                 <table class="table text-center">
                     <thead>
                         <tr>
