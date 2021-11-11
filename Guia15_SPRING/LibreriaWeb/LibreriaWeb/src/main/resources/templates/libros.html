@@ -19,7 +19,7 @@
     <body class="align-items-center">
         <nav th:replace="fragmentos :: navbar"></nav>
 
-        <div th:if="${libros.isEmpty()}" class="container container-small">
+        <div th:if="${libros.isEmpty()}" class="container container-small aux justify-content-center">
             <h2>Listado de libros</h2>
             <hr>
             <div>
@@ -28,7 +28,9 @@
         </div>
 
 
-        <div th:unless="${libros.isEmpty()}" class="container">
+        <div th:unless="${libros.isEmpty()}" class="container aux justify-content-center">
+            <h2>Listado de libros</h2>
+            <hr>
             <div>
                 <table class="table text-center">
                     <thead>
