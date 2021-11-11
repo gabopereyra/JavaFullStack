@@ -44,7 +44,6 @@
 body {
   display: flex;
   background-image: var(--fondo);
-  height: 100vh;
 }
 .navbar {
   background-color: var(--color1);
@@ -96,4 +95,12 @@ h5 a {
   .container-small {
     max-width: 720px;
   }
+}
+
+.aux{
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
