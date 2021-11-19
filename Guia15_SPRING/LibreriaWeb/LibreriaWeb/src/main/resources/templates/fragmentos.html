@@ -8,7 +8,8 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mb-2 col-11">
+            <a class="navbar-brand text-end" th:href="@{/}"><img src="../img/Logo.webp" alt="Logo" class="logo"></a>
+            <ul class="navbar-nav mb-2 col-10">
                 <!--DROPDOWN autores-->
                 <li class="nav-item dropdown">
                     <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"
@@ -51,7 +52,7 @@
                     </ul>
                 </li>
             </ul>
-            <a class="navbar-brand text-end" th:href="@{/}"><img src="../img/Logo.webp" alt="Logo" class="logo"></a>
+            <button type="button" class="btn btn-danger btnOut">SALIR</button>
         </div>
     </nav>
     
