@@ -17,13 +17,18 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
 @Controller
-@RequestMapping("/usuario-form")
+@RequestMapping("/login")
 public class UsuarioController {
     
     @Autowired
     private UsuarioServicio usuarioServicio;
     
     @GetMapping
+    public ModelAndView login() {
+        return new ModelAndView("login");
+    }
+    
+    @GetMapping("/crear")
     public ModelAndView createUsuario() {
         ModelAndView mav = new ModelAndView("usuario-form");
         mav.addObject("usuario", new Usuario());
@@ -31,9 +36,9 @@ public class UsuarioController {
         mav.addObject("action", "guardar");
         return mav;
     }
-    
+     
     @PostMapping("/guardar")
-    public RedirectView guardar(@RequestParam String username, @RequestParam String pass) {
+    public RedirectView guardar(@RequestParam String username, @RequestParam String pass) throws Exception {
         usuarioServicio.crear(username, pass);
         return new RedirectView("/login");
     }
