@@ -28,7 +28,7 @@
         id="formulario"
         method="POST"
         novalidate
-        th:action="@{/usuario-form/__${action}__}"
+        th:action="@{/login/__${action}__}"
         th:object="${usuario}"
       >
         <input type="hidden" name="id" th:field="*{id}" />
