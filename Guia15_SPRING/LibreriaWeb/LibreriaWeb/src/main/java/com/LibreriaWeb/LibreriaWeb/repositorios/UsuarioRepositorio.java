@@ -20,5 +20,5 @@ public interface UsuarioRepositorio extends JpaRepository<Usuario, String>{
     
     Optional<Usuario> findByUsername(String username);  // ES OTRA FORMA DE EJECUTAR LA QUERY ANTERIOR, sin necesidad de escribir todo
     
-   // boolean existsUsername(String username);
+   boolean existsUsuarioByUsername(String username);
 }
