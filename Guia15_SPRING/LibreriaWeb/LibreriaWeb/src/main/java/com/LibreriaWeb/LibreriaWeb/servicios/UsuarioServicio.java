@@ -24,10 +24,10 @@ public class UsuarioServicio implements UserDetailsService {
     private BCryptPasswordEncoder encoder;
 
     @Transactional
-    public void crear(String username, String pass){
-        /*if(usuarioRepositorio.existsUsername(username)){
+    public void crear(String username, String pass) throws Exception{
+      if(usuarioRepositorio.existsUsuarioByUsername(username)){
             throw new Exception("Ya existe ese nombre de usuario");
-        }*/
+        }
         
         Usuario user = new Usuario();
 
