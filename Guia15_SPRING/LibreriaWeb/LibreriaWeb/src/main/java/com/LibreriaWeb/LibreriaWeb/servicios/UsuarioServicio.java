@@ -26,7 +26,7 @@ public class UsuarioServicio implements UserDetailsService {
     @Transactional
     public void crear(String username, String pass) throws Exception{
       if(usuarioRepositorio.existsUsuarioByUsername(username)){
-            throw new Exception("Ya existe ese nombre de usuario");
+            throw new Exception("¡Ya existe ese nombre de usuario!");
         }
         
         Usuario user = new Usuario();
